@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-03-12T16:38:24.559044" rpa="false" schemaversion="5">
+<suite id="s1" name="AllCases" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases">
+<suite id="s1-s1" name="EndToEnd" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\EndToEnd">
+<suite id="s1-s1-s1" name="TC 0010 POST READ JSON" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\EndToEnd\TC_0010_POST_READ_JSON.robot">
+<test id="s1-s1-s1-t1" name="TC_005 Adding Student Details" line="11">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:24.896846" level="INFO">Creating Session using : alias=addstudentdata, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>addstudentdata</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:24.895849" elapsed="0.000997"/>
+</kw>
+<kw name="Featching and returning json" owner="UserKeyword">
+<kw name="Return Json Data" owner="FetchJsonData">
+<msg time="2024-03-12T16:38:24.897843" level="INFO">${json_data} = {'first_name': 'abc', 'middle_name': 'pqr', 'last_name': 'xyz', 'date_of_birth': '9/6/2002'}</msg>
+<var>${json_data}</var>
+<status status="PASS" start="2024-03-12T16:38:24.897843" elapsed="0.000998"/>
+</kw>
+<return>
+<value>${json_data}</value>
+<status status="PASS" start="2024-03-12T16:38:24.898841" elapsed="0.000000"/>
+</return>
+<msg time="2024-03-12T16:38:24.898841" level="INFO">${body} = {'first_name': 'abc', 'middle_name': 'pqr', 'last_name': 'xyz', 'date_of_birth': '9/6/2002'}</msg>
+<var>${body}</var>
+<status status="PASS" start="2024-03-12T16:38:24.897843" elapsed="0.000998"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-12T16:38:24.936740" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-12T16:38:24.935756" elapsed="0.000984"/>
+</kw>
+<kw name="Post Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:24.936740" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg time="2024-03-12T16:38:26.815606" level="INFO">POST Request : url=https://thetestingworldapi.com/api/studentsDetails 
+ path_url=/api/studentsDetails 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '92'} 
+ body={"first_name": "abc", "middle_name": "pqr", "last_name": "xyz", "date_of_birth": "9/6/2002"} 
+ </msg>
+<msg time="2024-03-12T16:38:26.815606" level="INFO">POST Response : url=https://thetestingworldapi.com/api/studentsDetails 
+ status=201, reason=Created 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Location': 'https://thetestingworldapi.com/api/studentsDetails/10092470', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:26 GMT', 'Content-Length': '99'} 
+ body={"id":10092470,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"} 
+ </msg>
+<msg time="2024-03-12T16:38:26.815606" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:26.817568" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>addstudentdata</arg>
+<arg>api/studentsDetails</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:24.936740" elapsed="1.880828"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:26.817568" elapsed="0.002023"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-03-12T16:38:26.820592" level="INFO">${actual_code} = 201</msg>
+<var>${actual_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-03-12T16:38:26.819591" elapsed="0.001001"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:26.821559" elapsed="0.000000"/>
+</kw>
+<doc>This test case display end to end conversation between all requests</doc>
+<status status="PASS" start="2024-03-12T16:38:24.894851" elapsed="1.927705"/>
+</test>
+<status status="PASS" start="2024-03-12T16:38:24.589962" elapsed="2.234585"/>
+</suite>
+<suite id="s1-s1-s2" name="TC 006 EndToEnd" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\EndToEnd\TC_006_EndToEnd.robot">
+<test id="s1-s1-s2-t1" name="TC_005 End to end Scenario" line="10">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:26.832546" level="INFO">Creating Session using : alias=studenturl, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>studenturl</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:26.831529" elapsed="0.001017"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-12T16:38:26.833537" level="INFO">${body} = {'first_name': 'Alita', 'middle_name': 'Robert', 'last_name': 'Dawny', 'date_of_birth': '9/24/2002'}</msg>
+<var>${body}</var>
+<arg>first_name=Alita</arg>
+<arg>middle_name=Robert</arg>
+<arg>last_name=Dawny</arg>
+<arg>date_of_birth=9/24/2002</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-12T16:38:26.833537" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-12T16:38:26.834529" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-12T16:38:26.834529" elapsed="0.000000"/>
+</kw>
+<kw name="Post Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:26.834529" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg time="2024-03-12T16:38:26.993245" level="INFO">POST Request : url=https://thetestingworldapi.com/api/studentsDetails 
+ path_url=/api/studentsDetails 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '100'} 
+ body={"first_name": "Alita", "middle_name": "Robert", "last_name": "Dawny", "date_of_birth": "9/24/2002"} 
+ </msg>
+<msg time="2024-03-12T16:38:26.993245" level="INFO">POST Response : url=https://thetestingworldapi.com/api/studentsDetails 
+ status=201, reason=Created 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Location': 'https://thetestingworldapi.com/api/studentsDetails/10092471', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:26 GMT', 'Content-Length': '107'} 
+ body={"id":10092471,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"} 
+ </msg>
+<msg time="2024-03-12T16:38:26.993245" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:26.995179" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>studenturl</arg>
+<arg>api/studentsDetails</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:26.834529" elapsed="0.160650"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:26.996208" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:38:26.999169" level="INFO">To JSON using : content={"id":10092471,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"} </msg>
+<msg time="2024-03-12T16:38:26.999169" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-03-12T16:38:26.999169" level="INFO">${json_response} = {'id': 10092471, 'first_name': 'Alita', 'middle_name': 'Robert', 'last_name': 'Dawny', 'date_of_birth': '9/24/2002'}</msg>
+<var>${json_response}</var>
+<arg>${response.text}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-03-12T16:38:26.996208" elapsed="0.002961"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-03-12T16:38:27.037125" level="INFO">@{student_id_list} = [ 10092471 ]</msg>
+<var>@{student_id_list}</var>
+<arg>${json_response}</arg>
+<arg>id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-03-12T16:38:27.000169" elapsed="0.036956"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-03-12T16:38:27.038123" level="INFO">${STUDENT_ID} = 10092471</msg>
+<var>${STUDENT_ID}</var>
+<arg>${student_id_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.038123" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${STUDENT_ID}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.038123" elapsed="0.000998"/>
+</kw>
+<kw name="Fetching and validating Student Details">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.159171" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10092471 
+ path_url=/api/studentsDetails/10092471 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:27.159171" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10092471 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:26 GMT', 'Content-Length': '132'} 
+ body={"status":"true","data":{"id":10092471,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"}} 
+ </msg>
+<msg time="2024-03-12T16:38:27.159171" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:27.160144" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>studenturl</arg>
+<arg>api/studentsDetails/${STUDENT_ID}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.040118" elapsed="0.120026"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.160144" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-03-12T16:38:27.161141" level="INFO">${actual_code} = 200</msg>
+<var>${actual_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.161141" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.161141" elapsed="0.000000"/>
+</kw>
+<arg>${STUDENT_ID}</arg>
+<status status="PASS" start="2024-03-12T16:38:27.039121" elapsed="0.122020"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-12T16:38:27.162138" level="INFO">${body} = {'id': 10092471, 'first_name': 'Alian', 'middle_name': 'RK', 'last_name': 'Dawny', 'date_of_birth': '24/9/2002'}</msg>
+<var>${body}</var>
+<arg>id=${STUDENT_ID}</arg>
+<arg>first_name=Alian</arg>
+<arg>middle_name=RK</arg>
+<arg>last_name=Dawny</arg>
+<arg>date_of_birth=24/9/2002</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.162138" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-12T16:38:27.163135" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.163135" elapsed="0.000000"/>
+</kw>
+<kw name="Put Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.164133" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg time="2024-03-12T16:38:27.210011" level="INFO">PUT Request : url=https://thetestingworldapi.com/api/studentsDetails/10092471 
+ path_url=/api/studentsDetails/10092471 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '112'} 
+ body={"id": 10092471, "first_name": "Alian", "middle_name": "RK", "last_name": "Dawny", "date_of_birth": "24/9/2002"} 
+ </msg>
+<msg time="2024-03-12T16:38:27.210011" level="INFO">PUT Response : url=https://thetestingworldapi.com/api/studentsDetails/10092471 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:26 GMT', 'Content-Length': '46'} 
+ body={"status":"true","msg":"update  data success"} 
+ </msg>
+<msg time="2024-03-12T16:38:27.210011" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:27.211008" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>studenturl</arg>
+<arg>api/studentsDetails/${STUDENT_ID}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `PUT On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.164133" elapsed="0.046875"/>
+</kw>
+<kw name="Fetching and validating Student Details">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.253693" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10092471 
+ path_url=/api/studentsDetails/10092471 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:27.253693" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10092471 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:26 GMT', 'Content-Length': '128'} 
+ body={"status":"true","data":{"id":10092471,"first_name":"Alian","middle_name":"RK","last_name":"Dawny","date_of_birth":"24/9/2002"}} 
+ </msg>
+<msg time="2024-03-12T16:38:27.253693" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:27.254691" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>studenturl</arg>
+<arg>api/studentsDetails/${STUDENT_ID}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.212029" elapsed="0.042662"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.254691" elapsed="0.000998"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-03-12T16:38:27.256686" level="INFO">${actual_code} = 200</msg>
+<var>${actual_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.255689" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.256686" elapsed="0.000000"/>
+</kw>
+<arg>${STUDENT_ID}</arg>
+<status status="PASS" start="2024-03-12T16:38:27.212029" elapsed="0.044657"/>
+</kw>
+<kw name="Delete Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.257684" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
+<msg time="2024-03-12T16:38:27.304691" level="INFO">DELETE Request : url=https://thetestingworldapi.com/api/studentsDetails/10092471 
+ path_url=/api/studentsDetails/10092471 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:27.304691" level="INFO">DELETE Response : url=https://thetestingworldapi.com/api/studentsDetails/10092471 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:26 GMT', 'Content-Length': '46'} 
+ body={"status":"true","msg":"Delete  data success"} 
+ </msg>
+<msg time="2024-03-12T16:38:27.304691" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:27.305669" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>studenturl</arg>
+<arg>api/studentsDetails/${STUDENT_ID}</arg>
+<doc>*DEPRECATED* Please use `DELETE On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.257684" elapsed="0.047985"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.305669" elapsed="0.000996"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.307663" elapsed="0.000998"/>
+</kw>
+<kw name="Fetching and validating Student Details">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.349067" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10092471 
+ path_url=/api/studentsDetails/10092471 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:27.349067" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10092471 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:26 GMT', 'Content-Length': '40'} 
+ body={"status":"false","msg":"No data Found"} 
+ </msg>
+<msg time="2024-03-12T16:38:27.349067" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:27.350041" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>studenturl</arg>
+<arg>api/studentsDetails/${STUDENT_ID}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.310657" elapsed="0.039384"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.350041" elapsed="0.001022"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-03-12T16:38:27.352037" level="INFO">${actual_code} = 200</msg>
+<var>${actual_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.351063" elapsed="0.000974"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.352037" elapsed="0.001021"/>
+</kw>
+<arg>${STUDENT_ID}</arg>
+<status status="PASS" start="2024-03-12T16:38:27.309664" elapsed="0.043394"/>
+</kw>
+<status status="PASS" start="2024-03-12T16:38:26.830532" elapsed="0.522526"/>
+</test>
+<status status="PASS" start="2024-03-12T16:38:26.826543" elapsed="0.528485"/>
+</suite>
+<suite id="s1-s1-s3" name="TC 007 ValidateStatusCode" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\EndToEnd\TC_007_ValidateStatusCode.robot">
+<test id="s1-s1-s3-t1" name="TC_006 Fetch Data" line="14">
+<kw name="Fetching and Validating Request" owner="UserKeyword">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.368316" level="INFO">Creating Session using : alias=url, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>url</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:27.368316" elapsed="0.000000"/>
+</kw>
+<kw name="Get Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.368316" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-03-12T16:38:27.510940" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10092420 
+ path_url=/api/studentsDetails/10092420 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:27.510940" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10092420 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:26 GMT', 'Content-Length': '135'} 
+ body={"status":"true","data":{"id":10092420,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"}} 
+ </msg>
+<msg time="2024-03-12T16:38:27.510940" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:27.510940" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>url</arg>
+<arg>api/studentsDetails/${id}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.368316" elapsed="0.142624"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-03-12T16:38:27.511943" level="INFO">${expected_code} = 200</msg>
+<var>${expected_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.511943" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${expected_code}</arg>
+<arg>${actual_code}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.511943" elapsed="0.000000"/>
+</kw>
+<arg>${id}</arg>
+<arg>200</arg>
+<doc>Fetching and validating request code using get request</doc>
+<status status="PASS" start="2024-03-12T16:38:27.368316" elapsed="0.143627"/>
+</kw>
+<kw name="Fetching and returning request" owner="UserKeyword">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.512959" level="INFO">Creating Session using : alias=url, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>url</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:27.512959" elapsed="0.000998"/>
+</kw>
+<kw name="Get Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.513957" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-03-12T16:38:27.663969" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10092420 
+ path_url=/api/studentsDetails/10092420 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:27.663969" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10092420 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:26 GMT', 'Content-Length': '135'} 
+ body={"status":"true","data":{"id":10092420,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"}} 
+ </msg>
+<msg time="2024-03-12T16:38:27.663969" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:27.664863" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>url</arg>
+<arg>api/studentsDetails/${id}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.513957" elapsed="0.151910"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-03-12T16:38:27.665867" elapsed="0.000000"/>
+</return>
+<msg time="2024-03-12T16:38:27.665867" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${id}</arg>
+<arg>200</arg>
+<status status="PASS" start="2024-03-12T16:38:27.512959" elapsed="0.152908"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.666876" elapsed="0.000981"/>
+</kw>
+<status status="PASS" start="2024-03-12T16:38:27.367317" elapsed="0.300540"/>
+</test>
+<status status="PASS" start="2024-03-12T16:38:27.356026" elapsed="0.313829"/>
+</suite>
+<status status="PASS" start="2024-03-12T16:38:24.587985" elapsed="3.084033"/>
+</suite>
+<suite id="s1-s2" name="GetDelete" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\GetDelete">
+<suite id="s1-s2-s1" name="TC 001 GET Request" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\GetDelete\TC_001_GET_Request.robot">
+<test id="s1-s2-s1-t1" name="TC_001_GET_Request" line="8">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.680993" level="INFO">Creating Session using : alias=getStudentDetails, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>getStudentDetails</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:27.680993" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.810892" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails 
+ path_url=/api/studentsDetails 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:27.810892" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:27 GMT', 'Content-Length': '10937'} 
+ body=[{"id":10092470,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092469,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092468,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092467,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092465,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092461,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092460,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092459,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092458,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092457,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092456,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092455,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092454,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092453,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092452,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092451,"first_name":"Selenium Testing1 Automation Testing","middle_name":"ABCDEF","last_name":"Hello","date_of_birth":"12/12/2000"},{"id":10092450,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2021"},{"id":10092449,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2021"},{"id":10092448,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2021"},{"id":10092447,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2021"},{"id":10092446,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092444,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092443,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092441,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092440,"first_name":"Alian","middle_name":"RK","last_name":"Dawny","date_of_birth":"24/9/2002"},{"id":10092439,"first_name":"Alian","middle_name":"RK","last_name":"Dawny","date_of_birth":"24/9/2002"},{"id":10092438,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092437,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092436,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092435,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092434,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092433,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092432,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092431,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092430,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092429,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092428,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092427,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null},{"id":10092426,"first_name":null,"middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":10092425,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":10092424,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092423,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092422,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092421,"first_name":"Alian","middle_name":"RK","last_name":"Dawny","date_of_birth":"24/9/2002"},{"id":10092420,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092419,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092418,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092417,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092416,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092415,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092414,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092413,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092412,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092411,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092410,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092409,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092408,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092407,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092406,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092405,"first_name":"testing","middle_name":"test","last_name":"world","date_of_birth":"12/12/2023"},{"id":10092404,"first_name":"testing","middle_name":"test","last_name":"world","date_of_birth":"12/12/2023"},{"id":10092403,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092402,"first_name":"testing","middle_name":"test","last_name":"world","date_of_birth":"12/12/2023"},{"id":10092401,"first_name":"testing","middle_name":"test","last_name":"world","date_of_birth":"12/12/2023"},{"id":10092400,"first_name":"Sireen","middle_name":"M","last_name":"Gothadiya","date_of_birth":"2000-07-20"},{"id":10092399,"first_name":"ABC","middle_name":"DEF","last_name":"GHIJ","date_of_birth":"5th Jun 2017"},{"id":10092397,"first_name":"ABC","middle_name":"DEF","last_name":"GHIJ","date_of_birth":"5th Jun 2017"},{"id":10092396,"first_name":"ABC","middle_name":"DEF","last_name":"GHIJ","date_of_birth":"5th Jun 2017"},{"id":10092394,"first_name":"ABC","middle_name":"DEF","last_name":"GHIJ","date_of_birth":"5th Jun 2017"},{"id":10092392,"first_name":"ffffazXXYY","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092391,"first_name":"ffffazXX","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092390,"first_name":"ffffaz","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092388,"first_name":"ffffaz","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092387,"first_name":"ffffaz","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092386,"first_name":"ffffaz","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092385,"first_name":"ffffaz","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092384,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092383,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092382,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092381,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092380,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092379,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092378,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092377,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092376,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092375,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092374,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092373,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092372,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092371,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092370,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092369,"first_name":"ffffa","middle_name":"mmmma","last_name":"l... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-03-12T16:38:27.811891" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:27.812318" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>getStudentDetails</arg>
+<arg>api/studentsDetails</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.681990" elapsed="0.130328"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.813559" elapsed="0.000688"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.814247" elapsed="0.020949"/>
+</kw>
+<tag>Sanity</tag>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-03-12T16:38:27.680024" elapsed="0.155714"/>
+</test>
+<status status="PASS" start="2024-03-12T16:38:27.675009" elapsed="0.163164"/>
+</suite>
+<suite id="s1-s2-s2" name="TC 002 GET Request ID" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\GetDelete\TC_002_GET_Request_ID.robot">
+<test id="s1-s2-s2-t1" name="TC_002_GET_Request_Student_Id" line="11">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.851335" level="INFO">Creating Session using : alias=getStudentDetails, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>getStudentDetails</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:27.851335" elapsed="0.000000"/>
+</kw>
+<kw name="Get Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.852336" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-03-12T16:38:27.978782" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10092357 
+ path_url=/api/studentsDetails/10092357 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:27.978782" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10092357 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:27 GMT', 'Content-Length': '167'} 
+ body={"status":"true","data":{"id":10092357,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"}} 
+ </msg>
+<msg time="2024-03-12T16:38:27.978782" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:27.980739" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>getStudentDetails</arg>
+<arg>api/studentsDetails/${STUDENT_ID}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.852336" elapsed="0.128403"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-03-12T16:38:27.982770" level="INFO">${actual_code} = 200</msg>
+<var>${actual_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.981740" elapsed="0.001030"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.983769" elapsed="0.002955"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:27.986724" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:38:27.990715" level="INFO">To JSON using : content={"status":"true","data":{"id":10092357,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"}} </msg>
+<msg time="2024-03-12T16:38:27.990715" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-03-12T16:38:27.990715" level="INFO">${json_response} = {'status': 'true', 'data': {'id': 10092357, 'first_name': 'sample string 2', 'middle_name': 'sample string 3', 'last_name': 'sample string 4', 'date_of_birth': 'sample string 5'}}</msg>
+<var>${json_response}</var>
+<arg>${response.text}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-03-12T16:38:27.986724" elapsed="0.003991"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-03-12T16:38:28.014313" level="INFO">@{student_name_list} = [ sample string 4 ]</msg>
+<var>@{student_name_list}</var>
+<arg>${json_response}</arg>
+<arg>data.last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-03-12T16:38:27.991712" elapsed="0.022601"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-03-12T16:38:28.015310" level="INFO">${student_name} = sample string 4</msg>
+<var>${student_name}</var>
+<arg>${student_name_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.015310" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${student_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.016465" elapsed="0.000471"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${student_name}</arg>
+<arg>sample string 4</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.017180" elapsed="0.000000"/>
+</kw>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-03-12T16:38:27.850139" elapsed="0.168042"/>
+</test>
+<test id="s1-s2-s2-t2" name="TC_002_GET_Request_Student_Id" line="32">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.020140" level="INFO">Creating Session using : alias=getStudentDetails, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>getStudentDetails</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:28.020140" elapsed="0.001031"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.165686" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10092357 
+ path_url=/api/studentsDetails/10092357 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:28.165686" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10092357 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:27 GMT', 'Content-Length': '167'} 
+ body={"status":"true","data":{"id":10092357,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"}} 
+ </msg>
+<msg time="2024-03-12T16:38:28.165686" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:28.168628" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>getStudentDetails</arg>
+<arg>api/studentsDetails/${STUDENT_ID}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.021171" elapsed="0.147457"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-03-12T16:38:28.171469" level="INFO">${actual_code} = 200</msg>
+<var>${actual_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.169467" elapsed="0.002002"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.172299" elapsed="0.001004"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.174092" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:38:28.178863" level="INFO">To JSON using : content={"status":"true","data":{"id":10092357,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"}} </msg>
+<msg time="2024-03-12T16:38:28.178863" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-03-12T16:38:28.179891" level="INFO">${json_response} = {'status': 'true', 'data': {'id': 10092357, 'first_name': 'sample string 2', 'middle_name': 'sample string 3', 'last_name': 'sample string 4', 'date_of_birth': 'sample string 5'}}</msg>
+<var>${json_response}</var>
+<arg>${response.text}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.174092" elapsed="0.005799"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-03-12T16:38:28.244477" level="INFO">@{student_name_list} = [ sample string 3 ]</msg>
+<var>@{student_name_list}</var>
+<arg>${json_response}</arg>
+<arg>data.middle_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-03-12T16:38:28.180857" elapsed="0.063620"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-03-12T16:38:28.245446" level="INFO">${student_name} = sample string 3</msg>
+<var>${student_name}</var>
+<arg>${student_name_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.245446" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${student_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.246679" elapsed="0.000497"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${student_name}</arg>
+<arg>sample string 3</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.247625" elapsed="0.000000"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" start="2024-03-12T16:38:28.020140" elapsed="0.228177"/>
+</test>
+<status status="PASS" start="2024-03-12T16:38:27.843158" elapsed="0.406003"/>
+</suite>
+<suite id="s1-s2-s3" name="TC 003 GET Request Parameter" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\GetDelete\TC_003_GET_Request_Parameter.robot">
+<test id="s1-s2-s3-t1" name="TC_003 validate get request with parameter" line="10">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.257646" level="INFO">Creating Session using : alias=get_param, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>get_param</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:28.256650" elapsed="0.000996"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-12T16:38:28.258674" level="INFO">${param} = {'page': '2'}</msg>
+<var>${param}</var>
+<arg>page=2</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.258674" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.408438" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:28.408438" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 12 Mar 2024 11:08:28 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1710179212&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=UYau%2FBFD5iBRSAkKTVqeGa9U%2FIoDZpVOPq9bDWAOxS0%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1710179212&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=UYau%2FBFD5iBRSAkKTVqeGa9U%2FIoDZpVOPq9bDWAOxS0%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '4533', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '863353956dd84049-BOM', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-03-12T16:38:28.408438" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:28.411399" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>get_param</arg>
+<arg>api/users</arg>
+<arg>params=${param}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.258674" elapsed="0.152725"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.412396" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:38:28.418381" level="INFO">To JSON using : content={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} </msg>
+<msg time="2024-03-12T16:38:28.418381" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-03-12T16:38:28.418381" level="INFO">${json_response} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
+<var>${json_response}</var>
+<arg>${response.text}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.412396" elapsed="0.005985"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-03-12T16:38:28.463932" level="INFO">${name_list} = ['Michael']</msg>
+<var>${name_list}</var>
+<arg>${json_response}</arg>
+<arg>data[0].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-03-12T16:38:28.420375" elapsed="0.043557"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name_list}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.464897" elapsed="0.000997"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-03-12T16:38:28.466894" level="INFO">${name} = Michael</msg>
+<var>${name}</var>
+<arg>${name_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.466894" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.467866" elapsed="0.000623"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>Michael</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.468489" elapsed="0.001033"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" start="2024-03-12T16:38:28.255681" elapsed="0.213841"/>
+</test>
+<status status="PASS" start="2024-03-12T16:38:28.250662" elapsed="0.220594"/>
+</suite>
+<suite id="s1-s2-s4" name="TC 004 DELETE Request ID" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\GetDelete\TC_004_DELETE_Request_ID.robot">
+<test id="s1-s2-s4-t1" name="TC_004 DELETE STUDENT DATA BASED ON STUDENT_ID" line="11">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.482444" level="INFO">Creating Session using : alias=deleteStudent, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>deleteStudent</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:28.482444" elapsed="0.000000"/>
+</kw>
+<kw name="Delete Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.483261" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
+<msg time="2024-03-12T16:38:28.627367" level="INFO">DELETE Request : url=https://thetestingworldapi.com/api/studentsDetails/10092353 
+ path_url=/api/studentsDetails/10092353 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:28.627367" level="INFO">DELETE Response : url=https://thetestingworldapi.com/api/studentsDetails/10092353 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:27 GMT', 'Content-Length': '43'} 
+ body={"status":"false","msg":"record not found"} 
+ </msg>
+<msg time="2024-03-12T16:38:28.627367" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:28.629444" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>deleteStudent</arg>
+<arg>api/studentsDetails/${ID}</arg>
+<doc>*DEPRECATED* Please use `DELETE On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.483261" elapsed="0.147181"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.631123" elapsed="0.002003"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.635120" elapsed="0.002037"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-03-12T16:38:28.640105" level="INFO">${actual_code} = 200</msg>
+<var>${actual_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.638113" elapsed="0.001992"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.641107" elapsed="0.001026"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.643141" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:38:28.648084" level="INFO">To JSON using : content={"status":"false","msg":"record not found"} </msg>
+<msg time="2024-03-12T16:38:28.648084" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-03-12T16:38:28.649082" level="INFO">${response_json} = {'status': 'false', 'msg': 'record not found'}</msg>
+<var>${response_json}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.643141" elapsed="0.005941"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-03-12T16:38:28.688839" level="INFO">@{message_list} = [ record not found ]</msg>
+<var>@{message_list}</var>
+<arg>${response_json}</arg>
+<arg>msg</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-03-12T16:38:28.651076" elapsed="0.037763"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${message_list}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.690751" elapsed="0.000990"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-03-12T16:38:28.692710" level="INFO">${message} = record not found</msg>
+<var>${message}</var>
+<arg>${message_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.692710" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${message}</arg>
+<arg>record not found</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.693896" elapsed="0.000000"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" start="2024-03-12T16:38:28.481243" elapsed="0.213417"/>
+</test>
+<status status="PASS" start="2024-03-12T16:38:28.474251" elapsed="0.221662"/>
+</suite>
+<status status="PASS" start="2024-03-12T16:38:27.673014" elapsed="1.024763"/>
+</suite>
+<suite id="s1-s3" name="PostPut" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\PostPut">
+<suite id="s1-s3-s1" name="TC 005 POST Request" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\PostPut\TC_005_POST_Request.robot">
+<test id="s1-s3-s1-t1" name="TC_005 Adding Student Details" line="10">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.710746" level="INFO">Creating Session using : alias=addstudentdata, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>addstudentdata</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:28.709750" elapsed="0.000996"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-12T16:38:28.711742" level="INFO">${body} = {'first_name': 'Alita', 'middle_name': 'Robert', 'last_name': 'Dawny', 'date_of_birth': '9/24/2002'}</msg>
+<var>${body}</var>
+<arg>first_name=Alita</arg>
+<arg>middle_name=Robert</arg>
+<arg>last_name=Dawny</arg>
+<arg>date_of_birth=9/24/2002</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.710746" elapsed="0.000996"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-12T16:38:28.711742" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.711742" elapsed="0.000000"/>
+</kw>
+<kw name="Post Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.713743" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg time="2024-03-12T16:38:28.854104" level="INFO">POST Request : url=https://thetestingworldapi.com/api/studentsDetails 
+ path_url=/api/studentsDetails 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '100'} 
+ body={"first_name": "Alita", "middle_name": "Robert", "last_name": "Dawny", "date_of_birth": "9/24/2002"} 
+ </msg>
+<msg time="2024-03-12T16:38:28.854104" level="INFO">POST Response : url=https://thetestingworldapi.com/api/studentsDetails 
+ status=201, reason=Created 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Location': 'https://thetestingworldapi.com/api/studentsDetails/10092472', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:28 GMT', 'Content-Length': '107'} 
+ body={"id":10092472,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"} 
+ </msg>
+<msg time="2024-03-12T16:38:28.854104" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:28.855142" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>addstudentdata</arg>
+<arg>api/studentsDetails</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.712739" elapsed="0.143416"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.856155" elapsed="0.001012"/>
+</kw>
+<status status="PASS" start="2024-03-12T16:38:28.709750" elapsed="0.147417"/>
+</test>
+<status status="PASS" start="2024-03-12T16:38:28.702768" elapsed="0.156082"/>
+</suite>
+<suite id="s1-s3-s2" name="TC 009 PUT Request" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\PostPut\TC_009_PUT_Request.robot">
+<test id="s1-s3-s2-t1" name="TC_005 Updating Student Details" line="11">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.865835" level="INFO">Creating Session using : alias=updatestudentdata, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>updatestudentdata</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:38:28.865835" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-12T16:38:28.866831" level="INFO">${body} = {'id': '10092421', 'first_name': 'Alian', 'middle_name': 'RK', 'last_name': 'Dawny', 'date_of_birth': '24/9/2002'}</msg>
+<var>${body}</var>
+<arg>id=${id}</arg>
+<arg>first_name=Alian</arg>
+<arg>middle_name=RK</arg>
+<arg>last_name=Dawny</arg>
+<arg>date_of_birth=24/9/2002</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.866831" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-12T16:38:28.868833" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.867830" elapsed="0.001003"/>
+</kw>
+<kw name="Put Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:28.868833" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg time="2024-03-12T16:38:29.001721" level="INFO">PUT Request : url=https://thetestingworldapi.com/api/studentsDetails/10092421 
+ path_url=/api/studentsDetails/10092421 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '114'} 
+ body={"id": "10092421", "first_name": "Alian", "middle_name": "RK", "last_name": "Dawny", "date_of_birth": "24/9/2002"} 
+ </msg>
+<msg time="2024-03-12T16:38:29.002717" level="INFO">PUT Response : url=https://thetestingworldapi.com/api/studentsDetails/10092421 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:28 GMT', 'Content-Length': '46'} 
+ body={"status":"true","msg":"update  data success"} 
+ </msg>
+<msg time="2024-03-12T16:38:29.002717" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:29.004711" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>updatestudentdata</arg>
+<arg>api/studentsDetails/${id}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `PUT On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:28.868833" elapsed="0.135878"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:29.005712" elapsed="0.001992"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:29.008702" elapsed="0.001994"/>
+</kw>
+<kw name="Get Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:38:29.012693" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-03-12T16:38:29.048208" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10092421 
+ path_url=/api/studentsDetails/10092421 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:38:29.048208" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10092421 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:08:28 GMT', 'Content-Length': '128'} 
+ body={"status":"true","data":{"id":10092421,"first_name":"Alian","middle_name":"RK","last_name":"Dawny","date_of_birth":"24/9/2002"}} 
+ </msg>
+<msg time="2024-03-12T16:38:29.048208" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:38:29.049358" level="INFO">${getResponse} = &lt;Response [200]&gt;</msg>
+<var>${getResponse}</var>
+<arg>updatestudentdata</arg>
+<arg>api/studentsDetails/${id}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:38:29.012693" elapsed="0.036665"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${getResponse.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:38:29.050370" elapsed="0.001014"/>
+</kw>
+<status status="PASS" start="2024-03-12T16:38:28.864852" elapsed="0.187303"/>
+</test>
+<status status="PASS" start="2024-03-12T16:38:28.859849" elapsed="0.193654"/>
+</suite>
+<status status="PASS" start="2024-03-12T16:38:28.699776" elapsed="0.354727"/>
+</suite>
+<status status="PASS" start="2024-03-12T16:38:24.562036" elapsed="4.494624"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Regression</stat>
+<stat pass="2" fail="0" skip="0">Sanity</stat>
+<stat pass="2" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="10" fail="0" skip="0" id="s1" name="AllCases">AllCases</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="EndToEnd">AllCases.EndToEnd</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="TC 0010 POST READ JSON">AllCases.EndToEnd.TC 0010 POST READ JSON</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s2" name="TC 006 EndToEnd">AllCases.EndToEnd.TC 006 EndToEnd</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s3" name="TC 007 ValidateStatusCode">AllCases.EndToEnd.TC 007 ValidateStatusCode</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s2" name="GetDelete">AllCases.GetDelete</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2-s1" name="TC 001 GET Request">AllCases.GetDelete.TC 001 GET Request</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2-s2" name="TC 002 GET Request ID">AllCases.GetDelete.TC 002 GET Request ID</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2-s3" name="TC 003 GET Request Parameter">AllCases.GetDelete.TC 003 GET Request Parameter</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2-s4" name="TC 004 DELETE Request ID">AllCases.GetDelete.TC 004 DELETE Request ID</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s3" name="PostPut">AllCases.PostPut</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3-s1" name="TC 005 POST Request">AllCases.PostPut.TC 005 POST Request</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3-s2" name="TC 009 PUT Request">AllCases.PostPut.TC 009 PUT Request</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-03-12T16:38:24.874905" level="WARN">Error in file 'E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\Resources\UserKeyword.robot' on line 25: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-03-12T16:38:24.883881" level="WARN">Error in file 'E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\Resources\UserKeyword.robot' on line 30: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-03-12T16:38:24.936740" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg time="2024-03-12T16:38:26.834529" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg time="2024-03-12T16:38:26.996208" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:38:27.164133" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg time="2024-03-12T16:38:27.257684" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
+<msg time="2024-03-12T16:38:27.368316" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-03-12T16:38:27.513957" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-03-12T16:38:27.852336" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-03-12T16:38:27.986724" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:38:28.019178" level="WARN">Multiple tests with name 'TC_002_GET_Request_Student_Id' executed in suite 'AllCases.GetDelete.TC 002 GET Request ID'.</msg>
+<msg time="2024-03-12T16:38:28.174092" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:38:28.412396" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:38:28.483261" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
+<msg time="2024-03-12T16:38:28.643141" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:38:28.713743" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg time="2024-03-12T16:38:28.868833" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg time="2024-03-12T16:38:29.012693" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+</errors>
+</robot>

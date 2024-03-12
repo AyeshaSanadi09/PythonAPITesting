@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-03-12T16:39:45.535162" rpa="false" schemaversion="5">
+<suite id="s1" name="GetDelete" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\GetDelete">
+<suite id="s1-s1" name="TC 001 GET Request" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\GetDelete\TC_001_GET_Request.robot">
+<test id="s1-s1-t1" name="TC_001_GET_Request" line="8">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:39:45.722278" level="INFO">Creating Session using : alias=getStudentDetails, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>getStudentDetails</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:39:45.721294" elapsed="0.000984"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:39:45.885518" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails 
+ path_url=/api/studentsDetails 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:39:45.885518" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:09:45 GMT', 'Content-Length': '10902'} 
+ body=[{"id":10092472,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092470,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092469,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092468,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092467,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092465,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092461,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092460,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092459,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092458,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092457,"first_name":"abc","middle_name":"pqr","last_name":"xyz","date_of_birth":"9/6/2002"},{"id":10092456,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092455,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092454,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092453,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092452,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092451,"first_name":"Selenium Testing1 Automation Testing","middle_name":"ABCDEF","last_name":"Hello","date_of_birth":"12/12/2000"},{"id":10092450,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2021"},{"id":10092449,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2021"},{"id":10092448,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2021"},{"id":10092447,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2021"},{"id":10092446,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092444,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092443,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092441,"first_name":"Automation","middle_name":"A","last_name":"Hello","date_of_birth":"12/12/1994"},{"id":10092440,"first_name":"Alian","middle_name":"RK","last_name":"Dawny","date_of_birth":"24/9/2002"},{"id":10092439,"first_name":"Alian","middle_name":"RK","last_name":"Dawny","date_of_birth":"24/9/2002"},{"id":10092438,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092437,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092436,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092435,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092434,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092433,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092432,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092431,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092430,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092429,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092428,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092427,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null},{"id":10092426,"first_name":null,"middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":10092425,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":10092424,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092423,"first_name":"Alita","middle_name":"Robert","last_name":"Dawny","date_of_birth":"9/24/2002"},{"id":10092422,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092421,"first_name":"Alian","middle_name":"RK","last_name":"Dawny","date_of_birth":"24/9/2002"},{"id":10092420,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092419,"first_name":"Testing","middle_name":"test22","last_name":"world","date_of_birth":"10/10/2022"},{"id":10092418,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092417,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092416,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092415,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092414,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092413,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092412,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092411,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092410,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092409,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092408,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092407,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092406,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092405,"first_name":"testing","middle_name":"test","last_name":"world","date_of_birth":"12/12/2023"},{"id":10092404,"first_name":"testing","middle_name":"test","last_name":"world","date_of_birth":"12/12/2023"},{"id":10092403,"first_name":"testing","middle_name":"test2","last_name":"world","date_of_birth":"12/12/2022"},{"id":10092402,"first_name":"testing","middle_name":"test","last_name":"world","date_of_birth":"12/12/2023"},{"id":10092401,"first_name":"testing","middle_name":"test","last_name":"world","date_of_birth":"12/12/2023"},{"id":10092400,"first_name":"Sireen","middle_name":"M","last_name":"Gothadiya","date_of_birth":"2000-07-20"},{"id":10092399,"first_name":"ABC","middle_name":"DEF","last_name":"GHIJ","date_of_birth":"5th Jun 2017"},{"id":10092397,"first_name":"ABC","middle_name":"DEF","last_name":"GHIJ","date_of_birth":"5th Jun 2017"},{"id":10092396,"first_name":"ABC","middle_name":"DEF","last_name":"GHIJ","date_of_birth":"5th Jun 2017"},{"id":10092394,"first_name":"ABC","middle_name":"DEF","last_name":"GHIJ","date_of_birth":"5th Jun 2017"},{"id":10092392,"first_name":"ffffazXXYY","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092391,"first_name":"ffffazXX","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092390,"first_name":"ffffaz","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092388,"first_name":"ffffaz","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092387,"first_name":"ffffaz","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092386,"first_name":"ffffaz","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092385,"first_name":"ffffaz","middle_name":"mmmmaz","last_name":"llllaz","date_of_birth":"01/01/2001"},{"id":10092384,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092383,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092382,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092381,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092380,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092379,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092378,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092377,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092376,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092375,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092374,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092373,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092372,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092371,"first_name":"ffffa","middle_name":"mmmma","last_name":"lllla","date_of_birth":"01/01/2001"},{"id":10092370,"first_name":"ffffa","middle_name":"mmmma","last_name":"l... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-03-12T16:39:45.885518" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:39:45.887481" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>getStudentDetails</arg>
+<arg>api/studentsDetails</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-12T16:39:45.723279" elapsed="0.164202"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:39:45.888068" elapsed="0.000744"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:39:45.888812" elapsed="0.009977"/>
+</kw>
+<tag>Sanity</tag>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-03-12T16:39:45.721294" elapsed="0.178494"/>
+</test>
+<status status="PASS" start="2024-03-12T16:39:45.564063" elapsed="0.336720"/>
+</suite>
+<suite id="s1-s2" name="TC 002 GET Request ID" source="E:\Step by Step Rest API Testing using Python + Pytest +Allure\Keyword Driven Framework\AllCases\GetDelete\TC_002_GET_Request_ID.robot">
+<test id="s1-s2-t1" name="TC_002_GET_Request_Student_Id" line="11">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:39:46.059357" level="INFO">Creating Session using : alias=getStudentDetails, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>getStudentDetails</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:39:46.059357" elapsed="0.000000"/>
+</kw>
+<kw name="Get Request" owner="RequestsLibrary">
+<msg time="2024-03-12T16:39:46.060368" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-03-12T16:39:46.206290" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10092357 
+ path_url=/api/studentsDetails/10092357 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:39:46.207287" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10092357 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:09:45 GMT', 'Content-Length': '167'} 
+ body={"status":"true","data":{"id":10092357,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"}} 
+ </msg>
+<msg time="2024-03-12T16:39:46.207287" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:39:46.208284" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>getStudentDetails</arg>
+<arg>api/studentsDetails/${STUDENT_ID}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.060368" elapsed="0.147916"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-03-12T16:39:46.210279" level="INFO">${actual_code} = 200</msg>
+<var>${actual_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.209283" elapsed="0.001994"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.211277" elapsed="0.001995"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-03-12T16:39:46.214269" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:39:46.217262" level="INFO">To JSON using : content={"status":"true","data":{"id":10092357,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"}} </msg>
+<msg time="2024-03-12T16:39:46.217262" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-03-12T16:39:46.217262" level="INFO">${json_response} = {'status': 'true', 'data': {'id': 10092357, 'first_name': 'sample string 2', 'middle_name': 'sample string 3', 'last_name': 'sample string 4', 'date_of_birth': 'sample string 5'}}</msg>
+<var>${json_response}</var>
+<arg>${response.text}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.214269" elapsed="0.002993"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-03-12T16:39:46.255159" level="INFO">@{student_name_list} = [ sample string 4 ]</msg>
+<var>@{student_name_list}</var>
+<arg>${json_response}</arg>
+<arg>data.last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-03-12T16:39:46.218259" elapsed="0.036900"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-03-12T16:39:46.259148" level="INFO">${student_name} = sample string 4</msg>
+<var>${student_name}</var>
+<arg>${student_name_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.259148" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${student_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.260146" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${student_name}</arg>
+<arg>sample string 4</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.261143" elapsed="0.000000"/>
+</kw>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-03-12T16:39:46.058362" elapsed="0.202781"/>
+</test>
+<test id="s1-s2-t2" name="TC_002_GET_Request_Student_Id" line="32">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:39:46.271115" level="INFO">Creating Session using : alias=getStudentDetails, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>getStudentDetails</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-03-12T16:39:46.268124" elapsed="0.005984"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-03-12T16:39:46.396483" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10092357 
+ path_url=/api/studentsDetails/10092357 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-12T16:39:46.396483" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10092357 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 12 Mar 2024 11:09:45 GMT', 'Content-Length': '167'} 
+ body={"status":"true","data":{"id":10092357,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"}} 
+ </msg>
+<msg time="2024-03-12T16:39:46.396483" level="INFO">C:\Users\ayesha.sanadi\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-03-12T16:39:46.397490" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>getStudentDetails</arg>
+<arg>api/studentsDetails/${STUDENT_ID}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.275105" elapsed="0.122385"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-03-12T16:39:46.398457" level="INFO">${actual_code} = 200</msg>
+<var>${actual_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.398457" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.398457" elapsed="0.000999"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-03-12T16:39:46.399456" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:39:46.400453" level="INFO">To JSON using : content={"status":"true","data":{"id":10092357,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"}} </msg>
+<msg time="2024-03-12T16:39:46.400453" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-03-12T16:39:46.400453" level="INFO">${json_response} = {'status': 'true', 'data': {'id': 10092357, 'first_name': 'sample string 2', 'middle_name': 'sample string 3', 'last_name': 'sample string 4', 'date_of_birth': 'sample string 5'}}</msg>
+<var>${json_response}</var>
+<arg>${response.text}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.399456" elapsed="0.000997"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-03-12T16:39:46.418434" level="INFO">@{student_name_list} = [ sample string 3 ]</msg>
+<var>@{student_name_list}</var>
+<arg>${json_response}</arg>
+<arg>data.middle_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-03-12T16:39:46.401451" elapsed="0.016983"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-03-12T16:39:46.419454" level="INFO">${student_name} = sample string 3</msg>
+<var>${student_name}</var>
+<arg>${student_name_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.419454" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${student_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.419454" elapsed="0.001017"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${student_name}</arg>
+<arg>sample string 3</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-12T16:39:46.420471" elapsed="0.001001"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" start="2024-03-12T16:39:46.266129" elapsed="0.155343"/>
+</test>
+<status status="PASS" start="2024-03-12T16:39:45.902777" elapsed="0.521687"/>
+</suite>
+<status status="PASS" start="2024-03-12T16:39:45.538124" elapsed="0.887337"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Sanity</stat>
+<stat pass="2" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="GetDelete">GetDelete</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TC 001 GET Request">GetDelete.TC 001 GET Request</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="TC 002 GET Request ID">GetDelete.TC 002 GET Request ID</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-03-12T16:39:46.060368" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-03-12T16:39:46.214269" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-03-12T16:39:46.264134" level="WARN">Multiple tests with name 'TC_002_GET_Request_Student_Id' executed in suite 'GetDelete.TC 002 GET Request ID'.</msg>
+<msg time="2024-03-12T16:39:46.399456" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+</errors>
+</robot>
