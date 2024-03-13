@@ -1,4 +1,0 @@
-10090952
-{"status":"true","msg":"Add  data success"}
-{"status":"true","msg":"Add  data success"}
-{"status":"true","data":{"first_name":"Andre","middle_name":"Robert","last_name":"Rechiee","date_of_birth":"24/08/2002","TechnicalDetails":[],"Address":[{"Permanent_Address":{"House_Number":null,"City":null,"State":null,"Country":null,"PhoneNumber":null},"Current_Address":null,"stId":"10090952"},{"Permanent_Address":{"House_Number":null,"City":null,"State":null,"Country":null,"PhoneNumber":null},"Current_Address":null,"stId":"10090952"}]}}
